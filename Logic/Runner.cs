@@ -2,7 +2,7 @@
 
 public class Runner
 {
-    private Cell[,] _grid;
+    private readonly Cell[,] _grid;
 
     public bool[,] Grid
     {
@@ -36,6 +36,6 @@ public class Runner
     
     private class Cell
     {
-        public bool IsAlive = false;
+        public readonly bool IsAlive = false;
     }
 }
