@@ -4,17 +4,19 @@ public class Runner
 {
     private readonly Cell[,] _grid;
 
-    public bool[,] Grid
+    public bool[][] Grid
     {
         get
         {
-            bool[,] grid = new  bool[_grid.GetLength(0), _grid.GetLength(1)];
+            var grid = new bool[_grid.GetLength(0)][];
             
             for (int row = 0; row < _grid.GetLength(0); row++)
             {
+                grid[row] = new bool[_grid.GetLength(1)];
+                
                 for (int column = 0; column < _grid.GetLength(1); column++)
                 {
-                    grid[row, column] = _grid[row, column].IsAlive;
+                    grid[row][column] = _grid[row, column].IsAlive;
                 }
             }
 
