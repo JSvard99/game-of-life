@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-grid',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './grid.scss',
 })
 export class Grid {
-
+  private http = inject(HttpClient);
 }
