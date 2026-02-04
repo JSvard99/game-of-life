@@ -26,12 +26,12 @@ public class Runner
     
     public Runner(int width, int height)
     {
-        _grid = new Cell[width, height];
+        _grid = new Cell[height, width];
         for (var row = 0; row < height; row++)
         {
             for (var column = 0; column < width; column++)
             {
-                _grid[column, row] = new Cell();
+                _grid[row, column] = new Cell();
             }
         }
     }
