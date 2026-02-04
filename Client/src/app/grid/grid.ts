@@ -9,4 +9,5 @@ import {HttpClient} from '@angular/common/http';
 })
 export class Grid {
   private http = inject(HttpClient);
+  private API_URL = 'http://localhost:5081';
 }
