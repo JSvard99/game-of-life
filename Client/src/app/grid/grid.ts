@@ -11,11 +11,11 @@ import {Observable} from 'rxjs';
 export class Grid {
   private http = inject(HttpClient);
   private API_URL = 'http://localhost:5081';
-  private grid$!: Observable<Array<boolean>>;
+  grid$!: Observable<boolean[][]>;
 
   constructor() {
     effect(() => {
-      this.grid$ = this.http.get<Array<boolean>>(`${this.API_URL}/grid`);
+      this.grid$ = this.http.get<boolean[][]>(`${this.API_URL}/grid`);
     });
   }
 }
