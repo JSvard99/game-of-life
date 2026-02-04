@@ -1,10 +1,11 @@
 import {Component, effect, inject} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {AsyncPipe} from '@angular/common';
 
 @Component({
   selector: 'app-grid',
-  imports: [],
+  imports: [AsyncPipe],
   templateUrl: './grid.html',
   styleUrl: './grid.scss',
 })
