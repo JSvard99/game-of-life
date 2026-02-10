@@ -2,7 +2,7 @@
     @for (row of grid(); track $index; let rowIndex = $index) {
       <tr>
       @for (column of row; track $index; let columnIndex = $index) {
-        <td>{{grid()[rowIndex][columnIndex]}}</td>
+        <td [class.alive]="grid()[rowIndex][columnIndex]"></td>
       }
       </tr>
     }
