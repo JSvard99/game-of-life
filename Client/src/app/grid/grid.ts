@@ -1,22 +1,20 @@
-import {Component, effect, inject} from '@angular/core';
+import {Component, inject, signal} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {AsyncPipe} from '@angular/common';
 
 @Component({
   selector: 'app-grid',
-  imports: [AsyncPipe],
+  imports: [],
   templateUrl: './grid.html',
   styleUrl: './grid.scss',
 })
 export class Grid {
   private http = inject(HttpClient);
   private API_URL = 'http://localhost:5081';
-  grid$!: Observable<boolean[][]>;
+  grid = signal<boolean[][]>([]);
 
   constructor() {
-    effect(() => {
-      this.grid$ = this.http.get<boolean[][]>(`${this.API_URL}/grid`);
+    this.http.get<Array<Array<boolean>>>(`${this.API_URL}/grid`).subscribe((response) => {
+      this.grid.set(response);
     });
   }
 }

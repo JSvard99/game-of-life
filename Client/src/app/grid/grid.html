@@ -1,11 +1,9 @@
-@if (grid$ | async; as grid) {
-  <table>
-    @for (row of grid; track $index; let rowIndex = $index) {
+<table>
+    @for (row of grid(); track $index; let rowIndex = $index) {
       <tr>
       @for (column of row; track $index; let columnIndex = $index) {
-        <td>{{grid[rowIndex][columnIndex]}}</td>
+        <td>{{grid()[rowIndex][columnIndex]}}</td>
       }
       </tr>
     }
-  </table>
-}
+</table>
