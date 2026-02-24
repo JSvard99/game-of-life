@@ -1,6 +1,4 @@
-﻿using GameOfLife.Logic;
-
-namespace GameOfLife.Logic.Test;
+﻿namespace GameOfLife.Logic.Test;
 
 [TestFixture]
 public class RunnerTest
