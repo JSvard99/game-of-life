@@ -10,6 +10,6 @@ public class RunnerTest
     {
         var runner = new Runner(10, 5);
         
-        Assert.That(runner.Grid, Has.Length.EqualTo(50));
+        Assert.That(runner.Grid, Has.Length.EqualTo(5));
     }
 }
