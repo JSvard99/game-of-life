@@ -1,4 +1,4 @@
-import {Component, inject, signal} from '@angular/core';
+import {Component, inject, signal, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
 @Component({
@@ -7,12 +7,12 @@ import {HttpClient} from '@angular/common/http';
   templateUrl: './grid.html',
   styleUrl: './grid.scss',
 })
-export class Grid {
+export class Grid implements OnInit {
   private http = inject(HttpClient);
   private API_URL = 'http://localhost:5081';
   grid = signal<boolean[][]>([]);
 
-  constructor() {
+  ngOnInit() {
     this.http.get<Array<Array<boolean>>>(`${this.API_URL}/grid`).subscribe((response) => {
       this.grid.set(response);
     });
