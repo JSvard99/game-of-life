@@ -1,4 +1,4 @@
-﻿namespace Logic;
+﻿namespace GameOfLife.Logic;
 
 public class Runner
 {

@@ -1,4 +1,4 @@
-using Logic;
+using GameOfLife.Logic;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>

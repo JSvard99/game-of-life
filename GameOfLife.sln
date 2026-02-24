@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{A9BB1AD9-2269-4D64-AE92-3B6E60746160}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj", "{3A9648FE-4E9A-4EB6-931D-84FA51C2D7C0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfLife.Logic", "GameOfLife.Logic\GameOfLife.Logic.csproj", "{3A9648FE-4E9A-4EB6-931D-84FA51C2D7C0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.Test", "Logic.Test\Logic.Test.csproj", "{9CB32413-81D6-4527-A6B6-076D5E897843}"
 EndProject
