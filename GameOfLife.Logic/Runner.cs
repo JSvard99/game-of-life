@@ -35,6 +35,11 @@ public class Runner
             }
         }
     }
+
+    public void SwitchCellState(int row, int column)
+    {
+        _grid[row, column].SwitchState();
+    }
     
     private class Cell
     {
