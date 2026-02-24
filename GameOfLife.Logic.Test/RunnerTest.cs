@@ -4,7 +4,7 @@
 public class RunnerTest
 {
     [Test]
-    public void RunnerCreatesGrid()
+    public void Constructor_CreatesGrid()
     {
         var runner = new Runner(10, 5);
         
