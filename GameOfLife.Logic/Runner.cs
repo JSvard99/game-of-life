@@ -38,6 +38,15 @@ public class Runner
     
     private class Cell
     {
-        public readonly bool IsAlive = false;
+        public bool IsAlive
+        {
+            get;
+            private set;
+        }
+
+        public void SwitchState()
+        {
+            IsAlive = !IsAlive;
+        }
     }
 }
