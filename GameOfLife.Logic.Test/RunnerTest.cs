@@ -8,7 +8,7 @@ public class RunnerTest
     {
         var runner = new Runner(10, 5);
         
-        Assert.That(runner.Grid, Has.Length.EqualTo(5));
+        Assert.That(runner.Grid, Has.Length.EqualTo(10));
     }
 
     [Test]
@@ -16,7 +16,7 @@ public class RunnerTest
     {
         // Arrange
         const int  row = 3;
-        const int  column = 5;
+        const int  column = 4;
         
         var runner = new Runner(10, 5);
         var initialState = runner.Grid[row][column];

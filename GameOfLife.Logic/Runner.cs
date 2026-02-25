@@ -24,7 +24,7 @@ public class Runner
         }
     }
     
-    public Runner(int width, int height)
+    public Runner(int height, int width)
     {
         _grid = new Cell[height, width];
         for (var row = 0; row < height; row++)
