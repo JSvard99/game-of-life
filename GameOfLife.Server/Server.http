@@ -5,3 +5,8 @@
 
 GET {{Server_HostAddress}}/grid
 Accept: application/json
+
+###
+
+PUT {{Server_HostAddress}}/grid/3/7?state=true
+Accept: application/json
