@@ -10,11 +10,11 @@ public class Runner
         {
             var grid = new bool[_grid.GetLength(0)][];
             
-            for (int row = 0; row < _grid.GetLength(0); row++)
+            for (var row = 0; row < _grid.GetLength(0); row++)
             {
                 grid[row] = new bool[_grid.GetLength(1)];
                 
-                for (int column = 0; column < _grid.GetLength(1); column++)
+                for (var column = 0; column < _grid.GetLength(1); column++)
                 {
                     grid[row][column] = _grid[row, column].IsAlive;
                 }
