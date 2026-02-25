@@ -28,4 +28,16 @@ public class RunnerTest
         // Assert
         Assert.That(newState, Is.Not.EqualTo(initialState));
     }
+    
+    [Test]
+    public void SwitchCellState_InvalidCell_ThrowsException()
+    {
+        // Arrange
+        const int row = 3;
+        const int column = 15;
+        
+        var runner = new Runner(10, 5);
+        // Act/Assert
+        Assert.Throws<IndexOutOfRangeException>(() => runner.SwitchCellState(row, column));
+    }
 }
