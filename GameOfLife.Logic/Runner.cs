@@ -36,9 +36,9 @@ public class Runner
         }
     }
 
-    public void SwitchCellState(int row, int column)
+    public void SetCellState(int row, int column, bool state)
     {
-        _grid[row, column].SwitchState();
+        _grid[row, column].SetState(state);
     }
     
     private class Cell
@@ -49,9 +49,9 @@ public class Runner
             private set;
         }
 
-        public void SwitchState()
+        public void SetState(bool state)
         {
-            IsAlive = !IsAlive;
+            IsAlive = state;
         }
     }
 }

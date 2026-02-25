@@ -22,11 +22,11 @@ public class RunnerTest
         var initialState = runner.Grid[row][column];
         
         // Act
-        runner.SwitchCellState(row, column);
+        runner.SetCellState(row, column, true);
         var newState = runner.Grid[row][column];
         
         // Assert
-        Assert.That(newState, Is.Not.EqualTo(initialState));
+        Assert.That(newState, Is.True);
     }
     
     [Test]
@@ -38,6 +38,6 @@ public class RunnerTest
         
         var runner = new Runner(10, 5);
         // Act/Assert
-        Assert.Throws<IndexOutOfRangeException>(() => runner.SwitchCellState(row, column));
+        Assert.Throws<IndexOutOfRangeException>(() => runner.SetCellState(row, column, true));
     }
 }
