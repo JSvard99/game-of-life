@@ -26,6 +26,7 @@ public class RunnerTest
         var newState = runner.Grid[row][column];
         
         // Assert
+        Assert.That(newState, Is.Not.EqualTo(initialState));
         Assert.That(newState, Is.True);
     }
     
