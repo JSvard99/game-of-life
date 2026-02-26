@@ -17,4 +17,15 @@ export class Grid implements OnInit {
       this.grid.set(response);
     });
   }
+
+  switchCellState(row: number, column: number): void {
+    let newState = !this.grid()[row][column];
+
+    this.http.put<boolean[][]>(`${this.API_URL}/grid/${row}/${column}`, {
+      state: newState
+    }).subscribe((response) => {
+      this.grid.set(response);
+    })
+  }
+
 }
