@@ -41,4 +41,41 @@ public class RunnerTest
         // Act/Assert
         Assert.Throws<IndexOutOfRangeException>(() => runner.SetCellState(row, column, true));
     }
+
+    [Test]
+    public void UpdateGrid_DeadCellStaysDead()
+    {
+        // Arrange
+        const int row = 3;
+        const int column = 4;
+        
+        var runner = new Runner(10, 5);
+        
+        // Act
+        runner.UpdateGrid();
+        
+        // Assert
+        Assert.That(!runner.Grid[row][column]);
+    }
+
+    [Test]
+    public void UpdateGrid_AliveStaysAlive()
+    {
+        // Arrange
+        const int row = 3;
+        const int column = 4;
+        
+        var runner = new Runner(10, 10);
+        
+        runner.SetCellState(row, column, true);
+        runner.SetCellState(row - 1, column - 1, true);
+        runner.SetCellState(row - 1, column, true);
+        runner.SetCellState(row - 1, column + 1, true);
+        
+        // Act
+        runner.UpdateGrid();
+
+        // Assert
+        Assert.That(runner.Grid[row][column], Is.True);
+    }
 }
