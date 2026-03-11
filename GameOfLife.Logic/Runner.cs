@@ -34,6 +34,29 @@ public class Runner
                 _grid[row, column] = new Cell();
             }
         }
+
+        for (var row = 0; row < height; row++)
+        {
+            for (var column = 0; column < width; column++)
+            {
+                
+                var cell = _grid[row, column];
+                for (var neighborRow = row - 1; neighborRow <= row + 1; neighborRow++)
+                {
+                    for (var neighborColumn = column - 1; neighborColumn <= column + 1; neighborColumn++)
+                    {
+                        if (neighborRow == row && neighborColumn == column) continue;
+                        
+                        try
+                        {
+                            var neighbor = _grid[neighborRow, neighborColumn];
+                            cell.AddNeighbor(neighbor);
+                        }
+                        catch (IndexOutOfRangeException) {}
+                    }
+                }
+            }
+        }
     }
 
     public void SetCellState(int row, int column, bool state)
