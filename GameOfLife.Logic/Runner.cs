@@ -80,5 +80,20 @@ public class Runner
             
             _neighbors.Add(neighbor);
         }
+
+        public bool ShouldSwitchState()
+        {
+            var aliveNeighbors = _neighbors.Count(neighbor => neighbor.IsAlive);
+
+            switch (IsAlive)
+            {
+                case true when aliveNeighbors < 2:
+                case true when aliveNeighbors > 3:
+                case false when aliveNeighbors == 3:
+                    return true;
+                default:
+                    return false;
+            }
+        }
     }
 }
