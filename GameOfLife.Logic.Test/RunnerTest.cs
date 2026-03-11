@@ -6,8 +6,10 @@ public class RunnerTest
     [Test]
     public void Constructor_CreatesGrid()
     {
+        // Arrange/Act
         var runner = new Runner(10, 5);
         
+        // Assert
         Assert.That(runner.Grid, Has.Length.EqualTo(10));
     }
 
@@ -38,6 +40,7 @@ public class RunnerTest
         const int column = 15;
         
         var runner = new Runner(10, 5);
+        
         // Act/Assert
         Assert.Throws<IndexOutOfRangeException>(() => runner.SetCellState(row, column, true));
     }
