@@ -63,6 +63,24 @@ public class Runner
     {
         _grid[row, column].IsAlive = state;
     }
+
+    public void UpdateGrid()
+    {
+        var cellsToSwitch = new List<Cell>();
+
+        foreach (var cell in _grid)
+        {
+            if (cell.ShouldSwitchState())
+            {
+                cellsToSwitch.Add(cell);
+            }
+        }
+
+        foreach (var cell in cellsToSwitch)
+        {
+            cell.IsAlive = !cell.IsAlive;
+        }
+    }
     
     
     private class Cell
