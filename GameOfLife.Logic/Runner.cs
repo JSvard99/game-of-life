@@ -41,8 +41,21 @@ public class Runner
         _grid[row, column].IsAlive = state;
     }
     
+    
     private class Cell
     {
         public bool IsAlive { get; set; }
+        private readonly List<Cell> _neighbors = [];
+        private const int MaxNeighbours = 8;
+
+        public void AddNeighbor(Cell neighbor)
+        {
+            if (_neighbors.Count >= MaxNeighbours)
+            {
+                throw new InvalidOperationException();
+            }
+            
+            _neighbors.Add(neighbor);
+        }
     }
 }
