@@ -38,20 +38,11 @@ public class Runner
 
     public void SetCellState(int row, int column, bool state)
     {
-        _grid[row, column].SetState(state);
+        _grid[row, column].IsAlive = state;
     }
     
     private class Cell
     {
-        public bool IsAlive
-        {
-            get;
-            private set;
-        }
-
-        public void SetState(bool state)
-        {
-            IsAlive = state;
-        }
+        public bool IsAlive { get; set; }
     }
 }
