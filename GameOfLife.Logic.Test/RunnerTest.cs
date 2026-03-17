@@ -101,4 +101,22 @@ public class RunnerTest
         // Assert
         Assert.That(runner.Grid[row][column], Is.True);
     }
+
+    [Test]
+    public void UpdateGrid_AliveCellDiesByUnderpopulation()
+    {
+        // Arrange
+        const int row = 3;
+        const int column = 4;
+        
+        var runner = new Runner(10, 10);
+        
+        runner.SetCellState(row, column, true);
+        
+        // Act
+        runner.UpdateGrid();
+        
+        // Assert
+        Assert.That(runner.Grid[row][column], Is.False);
+    }
 }
