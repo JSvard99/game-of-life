@@ -25,7 +25,7 @@ app.MapPut("/grid/{row:int}/{column:int}", (int row, int column, bool state) =>
         runner.SetCellState(row, column, state);
         return Results.Ok(runner.Grid);
     }
-    catch (IndexOutOfRangeException e)
+    catch (IndexOutOfRangeException)
     {
         return Results.BadRequest("Invalid cell.");
     }
