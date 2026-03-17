@@ -18,7 +18,7 @@ var runner = new Runner(10, 5);
 
 app.MapGet("/grid", () => runner.Grid);
 
-app.MapPut("/grid/{row}/{column}", (int row, int column, bool state) =>
+app.MapPut("/grid/{row:int}/{column:int}", (int row, int column, bool state) =>
 {
     try
     {
