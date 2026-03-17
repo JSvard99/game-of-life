@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, inject} from '@angular/core';
+import {Grid as GridService} from '../grid';
 
 @Component({
   selector: 'app-grid',
@@ -6,9 +7,10 @@ import {Component, OnInit} from '@angular/core';
   templateUrl: './grid.html',
   styleUrl: './grid.scss',
 })
-export class Grid implements OnInit {
-    ngOnInit(): void {
+export class Grid {
+  gridService = inject(GridService);
 
-    }
-
+  protected switchCellState(rowIndex: number, columnIndex: number) {
+    this.gridService.switchCellState(rowIndex, columnIndex);
+  }
 }

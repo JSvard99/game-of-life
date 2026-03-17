@@ -1,8 +1,8 @@
 <table>
-    @for (row of grid(); track $index; let rowIndex = $index) {
+    @for (row of gridService.grid(); track $index; let rowIndex = $index) {
       <tr>
       @for (column of row; track $index; let columnIndex = $index) {
-        <td [class.alive]="grid()[rowIndex][columnIndex]"><div (click)="switchCellState(rowIndex, columnIndex)"
+        <td [class.alive]="gridService.grid()[rowIndex][columnIndex]"><div (click)="switchCellState(rowIndex, columnIndex)"
                                                                class="cell"></div></td>
       }
       </tr>

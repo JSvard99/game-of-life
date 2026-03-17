@@ -1,15 +1,15 @@
-import {inject, Injectable, signal, OnInit} from '@angular/core';
+import {inject, Injectable, signal} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
-export class Grid implements OnInit {
+export class Grid {
   private http = inject(HttpClient);
   private API_URL = 'http://localhost:5081';
   grid = signal<boolean[][]>([]);
 
-  ngOnInit() {
+  constructor() {
     this.http.get<Array<Array<boolean>>>(`${this.API_URL}/grid`).subscribe((response) => {
       this.grid.set(response);
     });
