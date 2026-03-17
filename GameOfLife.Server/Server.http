@@ -8,5 +8,10 @@ Accept: application/json
 
 ###
 
-PUT {{Server_HostAddress}}/grid/3/7?state=true
+PUT {{Server_HostAddress}}/grid/7/3?state=true
+Accept: application/json
+
+###
+
+POST {{Server_HostAddress}}/grid/update
 Accept: application/json
