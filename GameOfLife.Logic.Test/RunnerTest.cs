@@ -62,7 +62,7 @@ public class RunnerTest
     }
 
     [Test]
-    public void UpdateGrid_AliveStaysAlive()
+    public void UpdateGrid_AliveCellStaysAlive()
     {
         // Arrange
         const int row = 3;
