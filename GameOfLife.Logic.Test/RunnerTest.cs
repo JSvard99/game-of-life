@@ -81,4 +81,24 @@ public class RunnerTest
         // Assert
         Assert.That(runner.Grid[row][column], Is.True);
     }
+
+    [Test]
+    public void UpdateGrid_DeadCellComesAlive()
+    {
+        // Arrange
+        const int row = 3;
+        const int column = 4;
+        
+        var runner = new Runner(10, 10);
+        
+        runner.SetCellState(row - 1, column - 1, true);
+        runner.SetCellState(row - 1, column, true);
+        runner.SetCellState(row - 1, column + 1, true);
+        
+        // Act
+        runner.UpdateGrid();
+        
+        // Assert
+        Assert.That(runner.Grid[row][column], Is.True);
+    }
 }
