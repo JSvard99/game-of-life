@@ -24,4 +24,11 @@ export class Grid {
       this.grid.set(response);
     })
   }
+
+  updateGrid(): void {
+    this.http.post<boolean[][]>(`${this.API_URL}/grid/update`, null)
+      .subscribe((response) => {
+        this.grid.set(response);
+      })
+  }
 }
