@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { Grid } from './grid/grid';
+import {MainPage} from './main-page/main-page';
 
 export const routes: Routes = [
   {
     path: "",
-    component: Grid
+    component: MainPage
   }
 ];
