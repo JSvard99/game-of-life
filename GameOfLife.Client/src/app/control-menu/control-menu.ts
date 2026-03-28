@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
+import {Grid as GridService} from '../grid';
 
 @Component({
   selector: 'app-control-menu',
@@ -7,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './control-menu.scss',
 })
 export class ControlMenu {
+  gridService = inject(GridService);
 
 }
