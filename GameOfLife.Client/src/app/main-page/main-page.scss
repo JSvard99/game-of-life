@@ -5,9 +5,14 @@ body {
 app-grid {
   display: block;
   border: solid red 0.5rem;
+  width: 70rem;
+  justify-self: center;
+  margin: 2rem;
 }
 
 app-control-menu {
   display: block;
   border: solid blue 0.5rem;
+  width: 50rem;
+  justify-self: center;
 }
