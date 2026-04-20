@@ -4,14 +4,15 @@ body {
 
 app-grid {
   display: block;
-  border: solid red 0.5rem;
+  border: solid darkslateblue 0.3rem;
   width: 70rem;
   justify-self: center;
   margin: 2rem;
 }
 
 app-control-menu {
-  border: solid blue 0.5rem;
-  width: 50rem;
+  background-color: darkslateblue;
+  border-radius: 0.5rem;
+  width: 20rem;
   justify-self: center;
 }
