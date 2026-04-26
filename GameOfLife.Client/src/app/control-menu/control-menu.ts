@@ -9,12 +9,13 @@ import {Grid as GridService} from '../grid';
 })
 export class ControlMenu {
   gridService = inject(GridService);
+  autoUpdateDelay = 250;
 
   protected updateGrid(): void {
     this.gridService.updateGrid();
   }
 
-  protected autoUpdate(): void {
-    setInterval(this.updateGrid, 500);
+  protected toggleAutoUpdate(): void {
+    setInterval(() => {this.updateGrid()}, this.autoUpdateDelay);
   }
 }
