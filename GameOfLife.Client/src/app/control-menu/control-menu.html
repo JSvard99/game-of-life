@@ -1,2 +1,8 @@
-<button (click)="toggleAutoUpdate()" >Play</button>
+<button (click)="toggleAutoUpdate()" >
+  @if (!isPlaying) {
+    Play
+  } @else {
+    Stop
+  }
+</button>
 <button (click)="updateGrid()" >Next</button>
