@@ -13,4 +13,8 @@ export class ControlMenu {
   protected updateGrid(): void {
     this.gridService.updateGrid();
   }
+
+  protected autoUpdate(): void {
+    setInterval(this.updateGrid, 500);
+  }
 }
