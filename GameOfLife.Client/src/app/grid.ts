@@ -19,6 +19,10 @@ export class Grid {
   }
 
   switchCellState(row: number, column: number): void {
+    if (this.isPlaying) {
+      return;
+    }
+
     let newState = !this.grid()[row][column];
 
     this.http.put<boolean[][]>(`${this.API_URL}/grid/${row}/${column}`, {}, {
