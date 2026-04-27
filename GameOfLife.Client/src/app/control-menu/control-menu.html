@@ -1,5 +1,5 @@
 <button (click)="toggleAutoUpdate()" >
-  @if (!isPlaying) {
+  @if (!this.gridService.isPlaying) {
     Play
   } @else {
     Stop

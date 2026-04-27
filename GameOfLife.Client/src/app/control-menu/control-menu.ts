@@ -9,22 +9,12 @@ import {Grid as GridService} from '../grid';
 })
 export class ControlMenu {
   gridService = inject(GridService);
-  autoUpdateDelay = 250;
-  isPlaying = false;
-  intervalId: number = -1;
 
   protected updateGrid(): void {
     this.gridService.updateGrid();
   }
 
   protected toggleAutoUpdate(): void {
-    if (!this.isPlaying) {
-      this.intervalId = setInterval(() => {this.updateGrid()}, this.autoUpdateDelay);
-    }
-    else {
-      clearInterval(this.intervalId);
-    }
-
-    this.isPlaying = !this.isPlaying;
+    this.gridService.toggleAutoUpdate();
   }
 }

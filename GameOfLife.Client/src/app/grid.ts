@@ -8,6 +8,9 @@ export class Grid {
   private http = inject(HttpClient);
   private API_URL = 'http://localhost:5081';
   grid = signal<boolean[][]>([]);
+  autoUpdateDelay = 250;
+  isPlaying = false;
+  intervalId: number = -1;
 
   constructor() {
     this.http.get<Array<Array<boolean>>>(`${this.API_URL}/grid`).subscribe((response) => {
@@ -30,5 +33,16 @@ export class Grid {
       .subscribe((response) => {
         this.grid.set(response);
       })
+  }
+
+  toggleAutoUpdate(): void {
+    if (!this.isPlaying) {
+      this.intervalId = setInterval(() => {this.updateGrid()}, this.autoUpdateDelay);
+    }
+    else {
+      clearInterval(this.intervalId);
+    }
+
+    this.isPlaying = !this.isPlaying;
   }
 }
