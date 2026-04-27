@@ -1,8 +1,8 @@
-<button (click)="toggleAutoUpdate()" >
-  @if (!this.gridService.isPlaying) {
+<button (click)="toggleAutoUpdate()">
+  @if (!gridService.isPlaying) {
     Play
   } @else {
     Stop
   }
 </button>
-<button (click)="updateGrid()" >Next</button>
+<button (click)="updateGrid()" [disabled]="gridService.isPlaying">Next</button>
