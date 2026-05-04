@@ -14,6 +14,10 @@ export class ControlMenu {
     this.gridService.clearGrid();
   }
 
+  protected randomizeGrid(): void {
+    this.gridService.randomizeGrid();
+  }
+
   protected updateGrid(): void {
     this.gridService.updateGrid();
   }
