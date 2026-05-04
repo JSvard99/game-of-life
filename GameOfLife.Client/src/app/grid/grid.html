@@ -1,4 +1,4 @@
-<table>
+<table [class.playing]="gridService.isPlaying">
   @for (row of gridService.grid(); track $index; let rowIndex = $index) {
     <tr>
       @for (column of row; track $index; let columnIndex = $index) {
