@@ -38,4 +38,11 @@ app.MapPost("/grid/update", () =>
     return runner.Grid;
 });
 
+app.MapPost("grid/clear", () =>
+{
+    runner.ClearGrid();
+
+    return runner.Grid;
+});
+
 app.Run();
