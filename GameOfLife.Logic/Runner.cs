@@ -89,7 +89,16 @@ public class Runner
             cell.IsAlive = false;
         }
     }
-    
+
+    public void RandomizeGrid()
+    {
+        var random = new Random();
+        
+        foreach (var cell in _grid)
+        {
+            cell.IsAlive = random.NextSingle() > 0.4;
+        }
+    }
     
     private class Cell
     {
