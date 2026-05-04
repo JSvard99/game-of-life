@@ -1,4 +1,4 @@
-<button (click)="clearGrid()" >Clear</button>
+<button (click)="clearGrid()" [disabled]="gridService.isPlaying">Clear</button>
 
 <button (click)="toggleAutoUpdate()">
   @if (!gridService.isPlaying) {
