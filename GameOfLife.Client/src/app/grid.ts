@@ -26,7 +26,7 @@ export class Grid {
     let newState = !this.grid()[row][column];
 
     this.http.put<boolean[][]>(`${this.API_URL}/grid/${row}/${column}`, {}, {
-      params: { state: newState },
+      params: {state: newState},
     }).subscribe((response) => {
       this.grid.set(response);
     })
@@ -46,11 +46,19 @@ export class Grid {
       })
   }
 
+  randomizeGrid(): void {
+    this.http.post<boolean[][]>(`${this.API_URL}/grid/randomize`, null)
+      .subscribe((response) => {
+        this.grid.set(response);
+      })
+  }
+
   toggleAutoUpdate(): void {
     if (!this.isPlaying) {
-      this.intervalId = setInterval(() => {this.updateGrid()}, this.autoUpdateDelay);
-    }
-    else {
+      this.intervalId = setInterval(() => {
+        this.updateGrid()
+      }, this.autoUpdateDelay);
+    } else {
       clearInterval(this.intervalId);
     }
 
