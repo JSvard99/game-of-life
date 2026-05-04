@@ -96,7 +96,7 @@ public class Runner
         
         foreach (var cell in _grid)
         {
-            cell.IsAlive = random.NextSingle() > 0.4;
+            cell.IsAlive = random.NextSingle() < 0.3;
         }
     }
     
