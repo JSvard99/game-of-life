@@ -4,6 +4,7 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::9CB32413-81D6-4527-A6B6-076D5E897843::net10.0::GameOfLife.Logic.Test.RunnerTest.ClearGrid_EmptyGrid_StaysEmpty&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::9CB32413-81D6-4527-A6B6-076D5E897843::net10.0::GameOfLife.Logic.Test.RunnerTest.ClearGrid_PopulatedGrid_Empties&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::9CB32413-81D6-4527-A6B6-076D5E897843::net10.0::GameOfLife.Logic.Test.RunnerTest.RandomizeGrid_Randomizes&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	</wpf:ResourceDictionary>

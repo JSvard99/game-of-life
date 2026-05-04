@@ -178,4 +178,16 @@ public class RunnerTest
             }
         }
     }
+
+    [Test]
+    public void RandomizeGrid_Randomizes()
+    {
+        // Arrange
+        var runner = new Runner(10, 5);
+        var original = runner.Grid.Clone();
+        // Act
+        runner.RandomizeGrid();
+        // Assert
+        Assert.That(runner.Grid, Is.Not.EqualTo(original));
+    }
 }
