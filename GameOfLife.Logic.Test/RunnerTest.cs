@@ -159,4 +159,23 @@ public class RunnerTest
             }
         }
     }
+
+    [Test]
+    public void ClearGrid_PopulatedGrid_Empties()
+    {
+        // Arrange
+        var runner = new Runner(10, 5);
+        runner.SetCellState(5, 3, true);
+        // Act
+        runner.ClearGrid();
+        // Assert
+        Assert.That(runner.Grid, Has.Length.EqualTo(10));
+        foreach (var row in runner.Grid)
+        {
+            foreach (var cell in row)
+            {
+                Assert.That(cell, Is.False);
+            }
+        }
+    }
 }

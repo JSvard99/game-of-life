@@ -3,6 +3,7 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=68d42a5e_002Dece5_002D4cec_002D940b_002D5b71bea0ab72/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ClearGrid_EmptyGrid_StaysEmpty" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::9CB32413-81D6-4527-A6B6-076D5E897843::net10.0::GameOfLife.Logic.Test.RunnerTest.ClearGrid_EmptyGrid_StaysEmpty&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::9CB32413-81D6-4527-A6B6-076D5E897843::net10.0::GameOfLife.Logic.Test.RunnerTest.ClearGrid_PopulatedGrid_Empties&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	</wpf:ResourceDictionary>
