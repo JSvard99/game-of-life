@@ -19,3 +19,8 @@ Accept: application/json
 
 POST {{Server_HostAddress}}/grid/clear
 Accept: application/json
+
+###
+
+POST {{Server_HostAddress}}/grid/randomize
+Accept: application/json
