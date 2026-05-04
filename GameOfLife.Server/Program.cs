@@ -3,11 +3,11 @@ using GameOfLife.Logic;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>
     options.AddDefaultPolicy(policy =>
-        {
+    {
         policy.AllowAnyOrigin();
         policy.AllowAnyMethod();
         policy.AllowAnyHeader();
-        }));
+    }));
 
 var app = builder.Build();
 
@@ -34,13 +34,20 @@ app.MapPut("/grid/{row:int}/{column:int}", (int row, int column, bool state) =>
 app.MapPost("/grid/update", () =>
 {
     runner.UpdateGrid();
-    
+
     return runner.Grid;
 });
 
 app.MapPost("grid/clear", () =>
 {
     runner.ClearGrid();
+
+    return runner.Grid;
+});
+
+app.MapPost("grid/randomize", () =>
+{
+    runner.RandomizeGrid();
 
     return runner.Grid;
 });
