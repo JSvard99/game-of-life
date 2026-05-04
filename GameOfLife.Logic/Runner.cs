@@ -2,7 +2,7 @@
 
 public class Runner
 {
-    private readonly Cell[,] _grid;
+    private Cell[,] _grid;
 
     public bool[][] Grid
     {
@@ -80,6 +80,11 @@ public class Runner
         {
             cell.IsAlive = !cell.IsAlive;
         }
+    }
+
+    public void ClearGrid()
+    {
+        _grid = new Cell[_grid.GetLength(0), _grid.GetLength(1)];
     }
     
     
