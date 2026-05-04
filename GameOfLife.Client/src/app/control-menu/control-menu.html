@@ -1,4 +1,4 @@
-<button (click)="randomizeGrid()">Randomize</button>
+<button (click)="randomizeGrid()" [disabled]="gridService.isPlaying">Randomize</button>
 
 <button (click)="clearGrid()" [disabled]="gridService.isPlaying">Clear</button>
 
