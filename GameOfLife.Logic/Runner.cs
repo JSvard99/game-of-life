@@ -84,7 +84,10 @@ public class Runner
 
     public void ClearGrid()
     {
-        _grid = new Cell[_grid.GetLength(0), _grid.GetLength(1)];
+        foreach (var cell in _grid)
+        {
+            cell.IsAlive = false;
+        }
     }
     
     

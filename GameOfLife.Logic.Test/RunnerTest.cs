@@ -141,4 +141,15 @@ public class RunnerTest
         // Assert
         Assert.That(runner.Grid[row][column], Is.False);
     }
+
+    [Test]
+    public void ClearGrid_EmptyGrid_StaysEmpty()
+    {
+        // Arrange
+        var runner = new Runner(10, 5);
+        // Act
+        runner.ClearGrid();
+        // Assert
+        Assert.That(runner.Grid, Has.Length.EqualTo(10));
+    }
 }
