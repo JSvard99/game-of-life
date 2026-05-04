@@ -1,3 +1,5 @@
+<button>Clear</button>
+
 <button (click)="toggleAutoUpdate()">
   @if (!gridService.isPlaying) {
     Play
@@ -5,4 +7,5 @@
     Stop
   }
 </button>
+
 <button (click)="updateGrid()" [disabled]="gridService.isPlaying">Next</button>
