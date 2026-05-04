@@ -10,6 +10,10 @@ import {Grid as GridService} from '../grid';
 export class ControlMenu {
   gridService = inject(GridService);
 
+  protected clearGrid(): void {
+    this.gridService.clearGrid();
+  }
+
   protected updateGrid(): void {
     this.gridService.updateGrid();
   }
