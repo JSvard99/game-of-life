@@ -1,6 +1,5 @@
 ###
 @Server_HostAddress = http://localhost:5081
-
 ###
 
 GET {{Server_HostAddress}}/grid
@@ -14,4 +13,9 @@ Accept: application/json
 ###
 
 POST {{Server_HostAddress}}/grid/update
+Accept: application/json
+
+###
+
+POST {{Server_HostAddress}}/grid/clear
 Accept: application/json
