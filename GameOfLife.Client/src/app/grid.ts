@@ -39,6 +39,13 @@ export class Grid {
       })
   }
 
+  clearGrid(): void {
+    this.http.post<boolean[][]>(`${this.API_URL}/grid/clear`, null)
+      .subscribe((response) => {
+        this.grid.set(response);
+      })
+  }
+
   toggleAutoUpdate(): void {
     if (!this.isPlaying) {
       this.intervalId = setInterval(() => {this.updateGrid()}, this.autoUpdateDelay);
