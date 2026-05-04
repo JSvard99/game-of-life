@@ -151,5 +151,12 @@ public class RunnerTest
         runner.ClearGrid();
         // Assert
         Assert.That(runner.Grid, Has.Length.EqualTo(10));
+        foreach (var row in runner.Grid)
+        {
+            foreach (var cell in row)
+            {
+                Assert.That(cell, Is.False);
+            }
+        }
     }
 }
