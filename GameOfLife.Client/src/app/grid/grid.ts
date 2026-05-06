@@ -8,7 +8,7 @@ import {Coordinate} from '../coordinate';
   templateUrl: './grid.html',
   styleUrl: './grid.scss',
   host: {
-    '(window:mouseup)': 'onMouseUp()',
+    '(window:mouseup)': 'drawStop()',
   }
 })
 export class Grid {
@@ -16,7 +16,7 @@ export class Grid {
   isDrawing: boolean = false;
   drawingState: boolean = false;
 
-  protected switchCellState(row: number, column: number, event: MouseEvent) {
+  protected drawStart(row: number, column: number, event: MouseEvent) {
     // Disables the drag event which might mess with the drawing
     event.preventDefault()
 
@@ -31,11 +31,7 @@ export class Grid {
     this.drawingState = !this.gridService.grid()[row][column];
   }
 
-  onMouseUp() {
-    this.isDrawing = false;
-  }
-
-  protected onMouseEnterCell(row: number, column: number) {
+  protected drawCell(row: number, column: number) {
     if (this.isDrawing) {
       let coordinate: Coordinate = {
         row,
@@ -46,5 +42,9 @@ export class Grid {
         this.gridService.switchCellState(coordinate);
       }
     }
+  }
+
+  drawStop() {
+    this.isDrawing = false;
   }
 }
