@@ -1,4 +1,5 @@
 using GameOfLife.Logic;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>
@@ -30,6 +31,13 @@ app.MapPut("/grid/{row:int}/{column:int}", (int row, int column, bool state) =>
     {
         return Results.BadRequest("Invalid cell.");
     }
+});
+
+app.MapPut("/grid/set-states", ([FromBody] List<Coordinate> coordinates, bool state) =>
+{
+    runner.SetCellStateAll(coordinates, state);
+    
+    return Results.Ok(runner.Cells);
 });
 
 app.MapPost("/grid/update", () =>
