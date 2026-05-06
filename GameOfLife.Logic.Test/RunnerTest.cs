@@ -10,7 +10,7 @@ public class RunnerTest
         var runner = new Runner(10, 5);
         
         // Assert
-        Assert.That(runner.Grid, Has.Length.EqualTo(10));
+        Assert.That(runner.Cells, Has.Length.EqualTo(10));
     }
 
     [Test]
@@ -21,11 +21,11 @@ public class RunnerTest
         const int  column = 4;
         
         var runner = new Runner(10, 5);
-        var initialState = runner.Grid[row][column];
+        var initialState = runner.Cells[row][column];
         
         // Act
         runner.SetCellState(row, column, true);
-        var newState = runner.Grid[row][column];
+        var newState = runner.Cells[row][column];
         
         // Assert
         Assert.That(newState, Is.Not.EqualTo(initialState));
@@ -58,7 +58,7 @@ public class RunnerTest
         runner.UpdateGrid();
         
         // Assert
-        Assert.That(!runner.Grid[row][column]);
+        Assert.That(!runner.Cells[row][column]);
     }
 
     [Test]
@@ -79,7 +79,7 @@ public class RunnerTest
         runner.UpdateGrid();
 
         // Assert
-        Assert.That(runner.Grid[row][column], Is.True);
+        Assert.That(runner.Cells[row][column], Is.True);
     }
 
     [Test]
@@ -99,7 +99,7 @@ public class RunnerTest
         runner.UpdateGrid();
         
         // Assert
-        Assert.That(runner.Grid[row][column], Is.True);
+        Assert.That(runner.Cells[row][column], Is.True);
     }
 
     [Test]
@@ -117,7 +117,7 @@ public class RunnerTest
         runner.UpdateGrid();
         
         // Assert
-        Assert.That(runner.Grid[row][column], Is.False);
+        Assert.That(runner.Cells[row][column], Is.False);
     }
 
     [Test]
@@ -139,7 +139,7 @@ public class RunnerTest
         runner.UpdateGrid();
         
         // Assert
-        Assert.That(runner.Grid[row][column], Is.False);
+        Assert.That(runner.Cells[row][column], Is.False);
     }
 
     [Test]
@@ -150,8 +150,8 @@ public class RunnerTest
         // Act
         runner.ClearGrid();
         // Assert
-        Assert.That(runner.Grid, Has.Length.EqualTo(10));
-        foreach (var row in runner.Grid)
+        Assert.That(runner.Cells, Has.Length.EqualTo(10));
+        foreach (var row in runner.Cells)
         {
             foreach (var cell in row)
             {
@@ -169,8 +169,8 @@ public class RunnerTest
         // Act
         runner.ClearGrid();
         // Assert
-        Assert.That(runner.Grid, Has.Length.EqualTo(10));
-        foreach (var row in runner.Grid)
+        Assert.That(runner.Cells, Has.Length.EqualTo(10));
+        foreach (var row in runner.Cells)
         {
             foreach (var cell in row)
             {
@@ -184,10 +184,10 @@ public class RunnerTest
     {
         // Arrange
         var runner = new Runner(10, 5);
-        var original = runner.Grid.Clone();
+        var original = runner.Cells.Clone();
         // Act
         runner.RandomizeGrid();
         // Assert
-        Assert.That(runner.Grid, Is.Not.EqualTo(original));
+        Assert.That(runner.Cells, Is.Not.EqualTo(original));
     }
 }

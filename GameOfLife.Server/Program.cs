@@ -16,14 +16,14 @@ app.UseCors();
 
 var runner = new Runner(15, 30);
 
-app.MapGet("/grid", () => runner.Grid);
+app.MapGet("/grid", () => runner.Cells);
 
 app.MapPut("/grid/{row:int}/{column:int}", (int row, int column, bool state) =>
 {
     try
     {
         runner.SetCellState(row, column, state);
-        return Results.Ok(runner.Grid);
+        return Results.Ok(runner.Cells);
     }
     catch (IndexOutOfRangeException)
     {
@@ -35,21 +35,21 @@ app.MapPost("/grid/update", () =>
 {
     runner.UpdateGrid();
 
-    return runner.Grid;
+    return runner.Cells;
 });
 
 app.MapPost("grid/clear", () =>
 {
     runner.ClearGrid();
 
-    return runner.Grid;
+    return runner.Cells;
 });
 
 app.MapPost("grid/randomize", () =>
 {
     runner.RandomizeGrid();
 
-    return runner.Grid;
+    return runner.Cells;
 });
 
 app.Run();

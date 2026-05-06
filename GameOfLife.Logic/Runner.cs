@@ -2,21 +2,21 @@
 
 public class Runner
 {
-    private readonly Cell[,] _grid;
+    private readonly Cell[,] _cells;
 
-    public bool[][] Grid
+    public bool[][] Cells
     {
         get
         {
-            var grid = new bool[_grid.GetLength(0)][];
+            var grid = new bool[_cells.GetLength(0)][];
             
-            for (var row = 0; row < _grid.GetLength(0); row++)
+            for (var row = 0; row < _cells.GetLength(0); row++)
             {
-                grid[row] = new bool[_grid.GetLength(1)];
+                grid[row] = new bool[_cells.GetLength(1)];
                 
-                for (var column = 0; column < _grid.GetLength(1); column++)
+                for (var column = 0; column < _cells.GetLength(1); column++)
                 {
-                    grid[row][column] = _grid[row, column].IsAlive;
+                    grid[row][column] = _cells[row, column].IsAlive;
                 }
             }
 
@@ -26,12 +26,12 @@ public class Runner
     
     public Runner(int height, int width)
     {
-        _grid = new Cell[height, width];
+        _cells = new Cell[height, width];
         for (var row = 0; row < height; row++)
         {
             for (var column = 0; column < width; column++)
             {
-                _grid[row, column] = new Cell();
+                _cells[row, column] = new Cell();
             }
         }
 
@@ -40,7 +40,7 @@ public class Runner
             for (var column = 0; column < width; column++)
             {
                 
-                var cell = _grid[row, column];
+                var cell = _cells[row, column];
                 for (var neighborRow = row - 1; neighborRow <= row + 1; neighborRow++)
                 {
                     for (var neighborColumn = column - 1; neighborColumn <= column + 1; neighborColumn++)
@@ -49,7 +49,7 @@ public class Runner
                         
                         try
                         {
-                            var neighbor = _grid[neighborRow, neighborColumn];
+                            var neighbor = _cells[neighborRow, neighborColumn];
                             cell.AddNeighbor(neighbor);
                         }
                         catch (IndexOutOfRangeException) {}
@@ -61,14 +61,14 @@ public class Runner
 
     public void SetCellState(int row, int column, bool state)
     {
-        _grid[row, column].IsAlive = state;
+        _cells[row, column].IsAlive = state;
     }
 
     public void UpdateGrid()
     {
         var cellsToSwitch = new List<Cell>();
 
-        foreach (var cell in _grid)
+        foreach (var cell in _cells)
         {
             if (cell.ShouldSwitchState())
             {
@@ -84,7 +84,7 @@ public class Runner
 
     public void ClearGrid()
     {
-        foreach (var cell in _grid)
+        foreach (var cell in _cells)
         {
             cell.IsAlive = false;
         }
@@ -94,7 +94,7 @@ public class Runner
     {
         var random = new Random();
         
-        foreach (var cell in _grid)
+        foreach (var cell in _cells)
         {
             cell.IsAlive = random.NextSingle() < 0.3;
         }
