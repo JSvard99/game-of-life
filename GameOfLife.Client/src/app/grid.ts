@@ -1,5 +1,6 @@
 import {inject, Injectable, signal} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Coordinate} from './coordinate';
 
 @Injectable({
   providedIn: 'root',
@@ -18,14 +19,14 @@ export class Grid {
     });
   }
 
-  switchCellState(row: number, column: number): void {
+  switchCellState(coordinate: Coordinate): void {
     if (this.isPlaying) {
       return;
     }
 
-    let newState = !this.grid()[row][column];
+    let newState = !this.grid()[coordinate.row][coordinate.column];
 
-    this.http.put<boolean[][]>(`${this.API_URL}/grid/${row}/${column}`, {}, {
+    this.http.put<boolean[][]>(`${this.API_URL}/grid/${coordinate.row}/${coordinate.column}`, {}, {
       params: {state: newState},
     }).subscribe((response) => {
       this.grid.set(response);
