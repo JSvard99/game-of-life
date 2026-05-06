@@ -33,7 +33,7 @@ app.MapPut("/grid/{row:int}/{column:int}", (int row, int column, bool state) =>
 
 app.MapPost("/grid/update", () =>
 {
-    runner.UpdateGrid();
+    runner.Update();
 
     return runner.Cells;
 });

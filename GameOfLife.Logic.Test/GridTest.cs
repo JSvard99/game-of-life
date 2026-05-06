@@ -55,7 +55,7 @@ public class GridTest
         var runner = new Grid(10, 5);
         
         // Act
-        runner.UpdateGrid();
+        runner.Update();
         
         // Assert
         Assert.That(!runner.Cells[row][column]);
@@ -76,7 +76,7 @@ public class GridTest
         runner.SetCellState(row - 1, column + 1, true);
         
         // Act
-        runner.UpdateGrid();
+        runner.Update();
 
         // Assert
         Assert.That(runner.Cells[row][column], Is.True);
@@ -96,7 +96,7 @@ public class GridTest
         runner.SetCellState(row - 1, column + 1, true);
         
         // Act
-        runner.UpdateGrid();
+        runner.Update();
         
         // Assert
         Assert.That(runner.Cells[row][column], Is.True);
@@ -114,7 +114,7 @@ public class GridTest
         runner.SetCellState(row, column, true);
         
         // Act
-        runner.UpdateGrid();
+        runner.Update();
         
         // Assert
         Assert.That(runner.Cells[row][column], Is.False);
@@ -136,7 +136,7 @@ public class GridTest
         runner.SetCellState(row, column - 1, true);
         
         // Act
-        runner.UpdateGrid();
+        runner.Update();
         
         // Assert
         Assert.That(runner.Cells[row][column], Is.False);

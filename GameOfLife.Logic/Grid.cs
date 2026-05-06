@@ -64,7 +64,7 @@ public class Grid
         _cells[row, column].IsAlive = state;
     }
 
-    public void UpdateGrid()
+    public void Update()
     {
         var cellsToSwitch = new List<Cell>();
 
