@@ -1,5 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {Grid as GridService} from '../grid';
+import {Coordinate} from '../coordinate';
 
 @Component({
   selector: 'app-grid',
@@ -10,7 +11,13 @@ import {Grid as GridService} from '../grid';
 export class Grid {
   gridService = inject(GridService);
 
-  protected switchCellState(rowIndex: number, columnIndex: number) {
-    this.gridService.switchCellState(rowIndex, columnIndex);
+  protected switchCellState(row: number, column: number) {
+
+    const coordinate: Coordinate = {
+      row,
+      column
+    };
+
+    this.gridService.switchCellState(coordinate);
   }
 }
