@@ -148,7 +148,7 @@ public class GridTest
         // Arrange
         var runner = new Grid(10, 5);
         // Act
-        runner.ClearGrid();
+        runner.Clear();
         // Assert
         Assert.That(runner.Cells, Has.Length.EqualTo(10));
         foreach (var row in runner.Cells)
@@ -167,7 +167,7 @@ public class GridTest
         var runner = new Grid(10, 5);
         runner.SetCellState(5, 3, true);
         // Act
-        runner.ClearGrid();
+        runner.Clear();
         // Assert
         Assert.That(runner.Cells, Has.Length.EqualTo(10));
         foreach (var row in runner.Cells)

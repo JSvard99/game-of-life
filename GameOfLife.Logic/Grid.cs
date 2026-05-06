@@ -82,7 +82,7 @@ public class Grid
         }
     }
 
-    public void ClearGrid()
+    public void Clear()
     {
         foreach (var cell in _cells)
         {

@@ -40,7 +40,7 @@ app.MapPost("/grid/update", () =>
 
 app.MapPost("grid/clear", () =>
 {
-    runner.ClearGrid();
+    runner.Clear();
 
     return runner.Cells;
 });
