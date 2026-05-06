@@ -6,6 +6,7 @@
           <div
             (click)="switchCellState(rowIndex, columnIndex)"
             (mousedown)="onMouseDownCell()"
+            (mouseenter)="onMouseEnterCell(rowIndex, columnIndex)"
             class="cell"></div>
         </td>
       }

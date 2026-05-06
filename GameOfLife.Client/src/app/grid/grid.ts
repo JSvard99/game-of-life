@@ -25,4 +25,10 @@ export class Grid {
   protected onMouseDownCell() {
     this.isDrawing = true;
   }
+
+  protected onMouseEnterCell(row: number, column: number) {
+    if (this.isDrawing) {
+      console.log('onHoverCell', row, column);
+    }
+  }
 }
