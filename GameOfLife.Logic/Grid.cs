@@ -1,6 +1,6 @@
 ﻿namespace GameOfLife.Logic;
 
-public class Runner
+public class Grid
 {
     private readonly Cell[,] _cells;
 
@@ -24,7 +24,7 @@ public class Runner
         }
     }
     
-    public Runner(int height, int width)
+    public Grid(int height, int width)
     {
         _cells = new Cell[height, width];
         for (var row = 0; row < height; row++)

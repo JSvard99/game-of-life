@@ -1,13 +1,13 @@
 ﻿namespace GameOfLife.Logic.Test;
 
 [TestFixture]
-public class RunnerTest
+public class GridTest
 {
     [Test]
     public void Constructor_CreatesGrid()
     {
         // Arrange/Act
-        var runner = new Runner(10, 5);
+        var runner = new Grid(10, 5);
         
         // Assert
         Assert.That(runner.Cells, Has.Length.EqualTo(10));
@@ -20,7 +20,7 @@ public class RunnerTest
         const int  row = 3;
         const int  column = 4;
         
-        var runner = new Runner(10, 5);
+        var runner = new Grid(10, 5);
         var initialState = runner.Cells[row][column];
         
         // Act
@@ -39,7 +39,7 @@ public class RunnerTest
         const int row = 3;
         const int column = 15;
         
-        var runner = new Runner(10, 5);
+        var runner = new Grid(10, 5);
         
         // Act/Assert
         Assert.Throws<IndexOutOfRangeException>(() => runner.SetCellState(row, column, true));
@@ -52,7 +52,7 @@ public class RunnerTest
         const int row = 3;
         const int column = 4;
         
-        var runner = new Runner(10, 5);
+        var runner = new Grid(10, 5);
         
         // Act
         runner.UpdateGrid();
@@ -68,7 +68,7 @@ public class RunnerTest
         const int row = 3;
         const int column = 4;
         
-        var runner = new Runner(10, 10);
+        var runner = new Grid(10, 10);
         
         runner.SetCellState(row, column, true);
         runner.SetCellState(row - 1, column - 1, true);
@@ -89,7 +89,7 @@ public class RunnerTest
         const int row = 3;
         const int column = 4;
         
-        var runner = new Runner(10, 10);
+        var runner = new Grid(10, 10);
         
         runner.SetCellState(row - 1, column - 1, true);
         runner.SetCellState(row - 1, column, true);
@@ -109,7 +109,7 @@ public class RunnerTest
         const int row = 3;
         const int column = 4;
         
-        var runner = new Runner(10, 10);
+        var runner = new Grid(10, 10);
         
         runner.SetCellState(row, column, true);
         
@@ -127,7 +127,7 @@ public class RunnerTest
         const int row = 3;
         const int column = 4;
         
-        var runner = new Runner(10, 10);
+        var runner = new Grid(10, 10);
         
         runner.SetCellState(row, column, true);
         runner.SetCellState(row - 1, column - 1, true);
@@ -146,7 +146,7 @@ public class RunnerTest
     public void ClearGrid_EmptyGrid_StaysEmpty()
     {
         // Arrange
-        var runner = new Runner(10, 5);
+        var runner = new Grid(10, 5);
         // Act
         runner.ClearGrid();
         // Assert
@@ -164,7 +164,7 @@ public class RunnerTest
     public void ClearGrid_PopulatedGrid_Empties()
     {
         // Arrange
-        var runner = new Runner(10, 5);
+        var runner = new Grid(10, 5);
         runner.SetCellState(5, 3, true);
         // Act
         runner.ClearGrid();
@@ -183,7 +183,7 @@ public class RunnerTest
     public void RandomizeGrid_Randomizes()
     {
         // Arrange
-        var runner = new Runner(10, 5);
+        var runner = new Grid(10, 5);
         var original = runner.Cells.Clone();
         // Act
         runner.RandomizeGrid();

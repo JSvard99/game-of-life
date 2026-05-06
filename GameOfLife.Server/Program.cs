@@ -14,7 +14,7 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 app.UseCors();
 
-var runner = new Runner(15, 30);
+var runner = new Grid(15, 30);
 
 app.MapGet("/grid", () => runner.Cells);
 
