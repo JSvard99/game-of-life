@@ -71,7 +71,11 @@ public class Grid
     {
         foreach (var coordinate in coordinates)
         {
-            SetCellState(coordinate, state);
+            try
+            {
+                SetCellState(coordinate, state);
+            }
+            catch (IndexOutOfRangeException) {}
         }
     }
 
