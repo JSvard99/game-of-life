@@ -59,9 +59,9 @@ public class Grid
         }
     }
 
-    public void SetCellState(int row, int column, bool state)
+    public void SetCellState(Coordinate coordinate, bool state)
     {
-        _cells[row, column].IsAlive = state;
+        _cells[coordinate.Row, coordinate.Column].IsAlive = state;
     }
 
     public void Update()
