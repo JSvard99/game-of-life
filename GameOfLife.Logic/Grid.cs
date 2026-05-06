@@ -67,7 +67,7 @@ public class Grid
         _cells[coordinate.Row, coordinate.Column].IsAlive = state;
     }
 
-    public void SetCellStateAll(Collection<Coordinate> coordinates, bool state)
+    public void SetCellStateAll(IEnumerable<Coordinate> coordinates, bool state)
     {
         foreach (var coordinate in coordinates)
         {
