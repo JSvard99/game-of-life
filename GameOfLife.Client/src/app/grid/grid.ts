@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, HostListener, inject} from '@angular/core';
 import {Grid as GridService} from '../grid';
 import {Coordinate} from '../coordinate';
 
@@ -7,6 +7,9 @@ import {Coordinate} from '../coordinate';
   imports: [],
   templateUrl: './grid.html',
   styleUrl: './grid.scss',
+  host: {
+    '(window:mouseup)': 'onMouseUp()',
+  }
 })
 export class Grid {
   gridService = inject(GridService);
@@ -24,6 +27,10 @@ export class Grid {
 
   protected onMouseDownCell() {
     this.isDrawing = true;
+  }
+
+  onMouseUp() {
+    this.isDrawing = false;
   }
 
   protected onMouseEnterCell(row: number, column: number) {
