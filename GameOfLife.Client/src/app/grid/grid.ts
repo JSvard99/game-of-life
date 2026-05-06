@@ -10,6 +10,7 @@ import {Coordinate} from '../coordinate';
 })
 export class Grid {
   gridService = inject(GridService);
+  isDrawing: boolean = false;
 
   protected switchCellState(row: number, column: number) {
 
@@ -19,5 +20,9 @@ export class Grid {
     };
 
     this.gridService.switchCellState(coordinate);
+  }
+
+  protected onMouseDownCell() {
+    this.isDrawing = true;
   }
 }
