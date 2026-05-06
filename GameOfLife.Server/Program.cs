@@ -22,7 +22,8 @@ app.MapPut("/grid/{row:int}/{column:int}", (int row, int column, bool state) =>
 {
     try
     {
-        runner.SetCellState(row, column, state);
+        var coordinate = new Coordinate(row, column);
+        runner.SetCellState(coordinate, state);
         return Results.Ok(runner.Cells);
     }
     catch (IndexOutOfRangeException)
