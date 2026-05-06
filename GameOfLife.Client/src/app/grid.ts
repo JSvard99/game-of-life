@@ -33,6 +33,16 @@ export class Grid {
     })
   }
 
+  switchCellStateAll(coordinates: Coordinate[], state: boolean): void {
+    this.http.put<boolean[][]>(`${this.API_URL}/grid/set-states`, {
+      coordinates
+    }, {
+      params: {state: state}
+    }).subscribe((response) => {
+      this.grid.set(response);
+    })
+  }
+
   updateGrid(): void {
     this.http.post<boolean[][]>(`${this.API_URL}/grid/update`, null)
       .subscribe((response) => {
