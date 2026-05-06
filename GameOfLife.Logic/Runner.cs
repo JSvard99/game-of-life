@@ -2,7 +2,7 @@
 
 public class Runner
 {
-    private Cell[,] _grid;
+    private readonly Cell[,] _grid;
 
     public bool[][] Grid
     {
