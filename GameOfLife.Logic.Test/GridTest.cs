@@ -8,7 +8,7 @@ public class GridTest
     {
         // Arrange/Act
         var runner = new Grid(10, 5);
-        
+
         // Assert
         Assert.That(runner.Cells, Has.Length.EqualTo(10));
     }
@@ -17,32 +17,32 @@ public class GridTest
     public void SwitchCellState_SwitchesState()
     {
         // Arrange
-        const int  row = 3;
-        const int  column = 4;
-        
+        const int row = 3;
+        const int column = 4;
+
         var runner = new Grid(10, 5);
         var initialState = runner.Cells[row][column];
-        
+
         // Act
-        runner.SetCellState(row, column, true);
+        runner.SetCellState(new Coordinate(row, column), true);
         var newState = runner.Cells[row][column];
-        
+
         // Assert
         Assert.That(newState, Is.Not.EqualTo(initialState));
         Assert.That(newState, Is.True);
     }
-    
+
     [Test]
     public void SwitchCellState_InvalidCell_ThrowsException()
     {
         // Arrange
         const int row = 3;
         const int column = 15;
-        
+
         var runner = new Grid(10, 5);
-        
+
         // Act/Assert
-        Assert.Throws<IndexOutOfRangeException>(() => runner.SetCellState(row, column, true));
+        Assert.Throws<IndexOutOfRangeException>(() => runner.SetCellState(new Coordinate(row, column), true));
     }
 
     [Test]
@@ -51,12 +51,12 @@ public class GridTest
         // Arrange
         const int row = 3;
         const int column = 4;
-        
+
         var runner = new Grid(10, 5);
-        
+
         // Act
         runner.Update();
-        
+
         // Assert
         Assert.That(!runner.Cells[row][column]);
     }
@@ -67,14 +67,14 @@ public class GridTest
         // Arrange
         const int row = 3;
         const int column = 4;
-        
+
         var runner = new Grid(10, 10);
-        
-        runner.SetCellState(row, column, true);
-        runner.SetCellState(row - 1, column - 1, true);
-        runner.SetCellState(row - 1, column, true);
-        runner.SetCellState(row - 1, column + 1, true);
-        
+
+        runner.SetCellState(new Coordinate(row, column), true);
+        runner.SetCellState(new Coordinate(row - 1, column - 1), true);
+        runner.SetCellState(new Coordinate(row - 1, column), true);
+        runner.SetCellState(new Coordinate(row - 1, column + 1), true);
+
         // Act
         runner.Update();
 
@@ -88,16 +88,16 @@ public class GridTest
         // Arrange
         const int row = 3;
         const int column = 4;
-        
+
         var runner = new Grid(10, 10);
-        
-        runner.SetCellState(row - 1, column - 1, true);
-        runner.SetCellState(row - 1, column, true);
-        runner.SetCellState(row - 1, column + 1, true);
-        
+
+        runner.SetCellState(new Coordinate(row - 1, column - 1), true);
+        runner.SetCellState(new Coordinate(row - 1, column), true);
+        runner.SetCellState(new Coordinate(row - 1, column + 1), true);
+
         // Act
         runner.Update();
-        
+
         // Assert
         Assert.That(runner.Cells[row][column], Is.True);
     }
@@ -108,14 +108,14 @@ public class GridTest
         // Arrange
         const int row = 3;
         const int column = 4;
-        
+
         var runner = new Grid(10, 10);
-        
-        runner.SetCellState(row, column, true);
-        
+
+        runner.SetCellState(new Coordinate(row, column), true);
+
         // Act
         runner.Update();
-        
+
         // Assert
         Assert.That(runner.Cells[row][column], Is.False);
     }
@@ -126,18 +126,18 @@ public class GridTest
         // Arrange
         const int row = 3;
         const int column = 4;
-        
+
         var runner = new Grid(10, 10);
-        
-        runner.SetCellState(row, column, true);
-        runner.SetCellState(row - 1, column - 1, true);
-        runner.SetCellState(row - 1, column, true);
-        runner.SetCellState(row - 1, column + 1, true);
-        runner.SetCellState(row, column - 1, true);
-        
+
+        runner.SetCellState(new Coordinate(row, column), true);
+        runner.SetCellState(new Coordinate(row - 1, column - 1), true);
+        runner.SetCellState(new Coordinate(row - 1, column), true);
+        runner.SetCellState(new Coordinate(row - 1, column + 1), true);
+        runner.SetCellState(new Coordinate(row, column - 1), true);
+
         // Act
         runner.Update();
-        
+
         // Assert
         Assert.That(runner.Cells[row][column], Is.False);
     }
@@ -164,15 +164,21 @@ public class GridTest
     public void ClearGrid_PopulatedGrid_Empties()
     {
         // Arrange
+        const int row = 3;
+        const int column = 4;
+
         var runner = new Grid(10, 5);
-        runner.SetCellState(5, 3, true);
+
+        runner.SetCellState(new Coordinate(row, column), true);
+
         // Act
         runner.Clear();
+
         // Assert
         Assert.That(runner.Cells, Has.Length.EqualTo(10));
-        foreach (var row in runner.Cells)
+        foreach (var cellRow in runner.Cells)
         {
-            foreach (var cell in row)
+            foreach (var cell in cellRow)
             {
                 Assert.That(cell, Is.False);
             }
@@ -185,8 +191,10 @@ public class GridTest
         // Arrange
         var runner = new Grid(10, 5);
         var original = runner.Cells.Clone();
+
         // Act
         runner.Randomize();
+
         // Assert
         Assert.That(runner.Cells, Is.Not.EqualTo(original));
     }
