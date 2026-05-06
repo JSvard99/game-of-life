@@ -14,8 +14,11 @@ import {Coordinate} from '../coordinate';
 export class Grid {
   gridService = inject(GridService);
   isDrawing: boolean = false;
+  drawingState: boolean = false;
 
-  protected switchCellState(row: number, column: number) {
+  protected switchCellState(row: number, column: number, event: MouseEvent) {
+    // Disables the drag event which might mess with the drawing
+    event.preventDefault()
 
     const coordinate: Coordinate = {
       row,
@@ -23,10 +26,9 @@ export class Grid {
     };
 
     this.gridService.switchCellState(coordinate);
-  }
 
-  protected onMouseDownCell() {
     this.isDrawing = true;
+    this.drawingState = !this.gridService.grid()[row][column];
   }
 
   onMouseUp() {
@@ -40,7 +42,9 @@ export class Grid {
         column
       }
 
-      this.gridService.switchCellState(coordinate);
+      if (this.gridService.grid()[row][column] !== this.drawingState) {
+        this.gridService.switchCellState(coordinate);
+      }
     }
   }
 }

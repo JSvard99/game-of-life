@@ -4,8 +4,7 @@
       @for (column of row; track $index; let columnIndex = $index) {
         <td [class.playing]="gridService.isPlaying" [class.alive]="gridService.grid()[rowIndex][columnIndex]">
           <div
-            (click)="switchCellState(rowIndex, columnIndex)"
-            (mousedown)="onMouseDownCell()"
+            (mousedown)="switchCellState(rowIndex, columnIndex, $event)"
             (mouseenter)="onMouseEnterCell(rowIndex, columnIndex)"
             class="cell"></div>
         </td>
