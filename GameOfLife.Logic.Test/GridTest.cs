@@ -186,7 +186,7 @@ public class GridTest
         var runner = new Grid(10, 5);
         var original = runner.Cells.Clone();
         // Act
-        runner.RandomizeGrid();
+        runner.Randomize();
         // Assert
         Assert.That(runner.Cells, Is.Not.EqualTo(original));
     }

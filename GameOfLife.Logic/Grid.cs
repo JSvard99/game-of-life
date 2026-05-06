@@ -90,7 +90,7 @@ public class Grid
         }
     }
 
-    public void RandomizeGrid()
+    public void Randomize()
     {
         var random = new Random();
         

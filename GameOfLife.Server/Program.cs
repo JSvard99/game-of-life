@@ -47,7 +47,7 @@ app.MapPost("grid/clear", () =>
 
 app.MapPost("grid/randomize", () =>
 {
-    runner.RandomizeGrid();
+    runner.Randomize();
 
     return runner.Cells;
 });
