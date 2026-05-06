@@ -35,7 +35,12 @@ export class Grid {
 
   protected onMouseEnterCell(row: number, column: number) {
     if (this.isDrawing) {
-      console.log('onHoverCell', row, column);
+      let coordinate: Coordinate = {
+        row,
+        column
+      }
+
+      this.gridService.switchCellState(coordinate);
     }
   }
 }
