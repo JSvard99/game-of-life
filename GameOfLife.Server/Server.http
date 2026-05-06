@@ -24,3 +24,24 @@ Accept: application/json
 
 POST {{Server_HostAddress}}/grid/randomize
 Accept: application/json
+
+###
+
+PUT {{Server_HostAddress}}/grid/set-states?state=true
+Content-Type: application/json
+Accept: application/json
+
+[
+  {
+    "Row": 1,
+    "Column": 1
+  },
+  {
+    "Row": 2,
+    "Column": 2
+  },
+  {
+    "Row": 3,
+    "Column": 3
+  }
+]
