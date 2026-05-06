@@ -1,3 +1,3 @@
 ﻿namespace GameOfLife.Logic;
 
-public record Coordinate(int X, int Y);
+public record Coordinate(int Row, int Column);
