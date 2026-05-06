@@ -5,6 +5,7 @@
         <td [class.playing]="gridService.isPlaying" [class.alive]="gridService.grid()[rowIndex][columnIndex]">
           <div
             (click)="switchCellState(rowIndex, columnIndex)"
+            (mousedown)="onMouseDownCell()"
             class="cell"></div>
         </td>
       }
