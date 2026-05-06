@@ -1,4 +1,7 @@
-﻿namespace GameOfLife.Logic;
+﻿using System.Collections.ObjectModel;
+using Microsoft.VisualBasic;
+
+namespace GameOfLife.Logic;
 
 public class Grid
 {
@@ -62,6 +65,14 @@ public class Grid
     public void SetCellState(Coordinate coordinate, bool state)
     {
         _cells[coordinate.Row, coordinate.Column].IsAlive = state;
+    }
+
+    public void SetCellStateAll(Collection<Coordinate> coordinates, bool state)
+    {
+        foreach (var coordinate in coordinates)
+        {
+            SetCellState(coordinate, state);
+        }
     }
 
     public void Update()
