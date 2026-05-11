@@ -1,4 +1,4 @@
-import {Component, HostListener, inject} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {Grid as GridService} from '../grid';
 import {Coordinate} from '../coordinate';
 
