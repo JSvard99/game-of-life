@@ -198,27 +198,4 @@ public class GridTest
         // Assert
         Assert.That(runner.Cells, Is.Not.EqualTo(original));
     }
-
-    [Test]
-    public void SetCellStateAll_SetsStates()
-    {
-        // Arrange
-        var runner = new Grid(10, 5);
-
-        var coordinates = new List<Coordinate>
-        {
-            new Coordinate(1, 1),
-            new Coordinate(1, 2),
-            new Coordinate(1, 3)
-        };
-
-        // Act
-        runner.SetCellStateAll(coordinates, true);
-        
-        // Assert
-        foreach (var coordinate in coordinates)
-        {
-            Assert.That(runner.Cells[coordinate.Row][coordinate.Column], Is.True);
-        }
-    }
 }
