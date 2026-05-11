@@ -67,18 +67,6 @@ public class Grid
         _cells[coordinate.Row, coordinate.Column].IsAlive = state;
     }
 
-    public void SetCellStateAll(IEnumerable<Coordinate> coordinates, bool state)
-    {
-        foreach (var coordinate in coordinates)
-        {
-            try
-            {
-                SetCellState(coordinate, state);
-            }
-            catch (IndexOutOfRangeException) {}
-        }
-    }
-
     public void Update()
     {
         var cellsToSwitch = new List<Cell>();
