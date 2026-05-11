@@ -1,7 +1,4 @@
-﻿using System.Collections.ObjectModel;
-using Microsoft.VisualBasic;
-
-namespace GameOfLife.Logic;
+﻿namespace GameOfLife.Logic;
 
 public class Grid
 {
@@ -12,11 +9,11 @@ public class Grid
         get
         {
             var grid = new bool[_cells.GetLength(0)][];
-            
+
             for (var row = 0; row < _cells.GetLength(0); row++)
             {
                 grid[row] = new bool[_cells.GetLength(1)];
-                
+
                 for (var column = 0; column < _cells.GetLength(1); column++)
                 {
                     grid[row][column] = _cells[row, column].IsAlive;
@@ -26,7 +23,7 @@ public class Grid
             return grid;
         }
     }
-    
+
     public Grid(int height, int width)
     {
         _cells = new Cell[height, width];
@@ -42,20 +39,21 @@ public class Grid
         {
             for (var column = 0; column < width; column++)
             {
-                
                 var cell = _cells[row, column];
                 for (var neighborRow = row - 1; neighborRow <= row + 1; neighborRow++)
                 {
                     for (var neighborColumn = column - 1; neighborColumn <= column + 1; neighborColumn++)
                     {
                         if (neighborRow == row && neighborColumn == column) continue;
-                        
+
                         try
                         {
                             var neighbor = _cells[neighborRow, neighborColumn];
                             cell.AddNeighbor(neighbor);
                         }
-                        catch (IndexOutOfRangeException) {}
+                        catch (IndexOutOfRangeException)
+                        {
+                        }
                     }
                 }
             }
@@ -96,13 +94,13 @@ public class Grid
     public void Randomize()
     {
         var random = new Random();
-        
+
         foreach (var cell in _cells)
         {
             cell.IsAlive = random.NextSingle() < 0.3;
         }
     }
-    
+
     private class Cell
     {
         public bool IsAlive { get; set; }
@@ -115,7 +113,7 @@ public class Grid
             {
                 throw new InvalidOperationException();
             }
-            
+
             _neighbors.Add(neighbor);
         }
 
