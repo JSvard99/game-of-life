@@ -33,13 +33,6 @@ app.MapPut("/grid/{row:int}/{column:int}", (int row, int column, bool state) =>
     }
 });
 
-app.MapPut("/grid/set-states", ([FromBody] List<Coordinate> coordinates, bool state) =>
-{
-    runner.SetCellStateAll(coordinates, state);
-    
-    return Results.Ok(runner.Cells);
-});
-
 app.MapPost("/grid/update", () =>
 {
     runner.Update();
