@@ -28,6 +28,9 @@ button {
 
 .clear-button {
   background-color: rgb(255, 255, 64);
+  &:hover {
+    background-color: rgb(255, 255, 0);
+  }
 }
 
 .play-button {
