@@ -5,7 +5,9 @@
   <span class="material-symbols-rounded">shuffle</span>
 </button>
 
-<button (click)="clearGrid()" [disabled]="gridService.isPlaying">Clear</button>
+<button (click)="clearGrid()" [disabled]="gridService.isPlaying">
+  <span class="material-symbols-rounded">delete</span>
+</button>
 
 <button (click)="toggleAutoUpdate()">
   @if (!gridService.isPlaying) {
