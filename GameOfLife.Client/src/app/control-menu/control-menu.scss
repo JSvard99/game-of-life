@@ -8,6 +8,24 @@
   corner-shape: squircle;
 }
 
+
+.left {
+  display: flex;
+  flex: 1 0 0;
+  justify-content: space-evenly;
+}
+
+.center {
+  display: flex;
+  flex: 1 0 0;
+  justify-content: center;
+}
+
+.right {
+  display: flex;
+  flex: 1 0 0;
+}
+
 button {
   display: flex;
   justify-content: center;
