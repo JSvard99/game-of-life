@@ -11,7 +11,7 @@
 
 <button (click)="toggleAutoUpdate()">
   @if (!gridService.isPlaying) {
-    Play
+    <span class="material-symbols-rounded">play_arrow</span>
   } @else {
     Stop
   }
