@@ -1,9 +1,12 @@
 import {Component, inject} from '@angular/core';
 import {Grid as GridService} from '../grid';
+import {NgClass} from '@angular/common';
 
 @Component({
   selector: 'app-control-menu',
-  imports: [],
+  imports: [
+    NgClass
+  ],
   templateUrl: './control-menu.html',
   styleUrl: './control-menu.scss',
 })

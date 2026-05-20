@@ -9,7 +9,8 @@
   <span class="material-symbols-rounded">delete</span>
 </button>
 
-<button (click)="toggleAutoUpdate()">
+<button (click)="toggleAutoUpdate()"
+        [ngClass]="{'play-button': !gridService.isPlaying, 'stop-button': gridService.isPlaying}">
   @if (!gridService.isPlaying) {
     <span class="material-symbols-rounded">play_arrow</span>
   } @else {
