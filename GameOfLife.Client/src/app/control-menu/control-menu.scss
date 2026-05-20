@@ -3,6 +3,16 @@
   background-color: darkslateblue;
   display: flex;
   justify-content: space-evenly;
+  padding: clamp(0rem, 0.75rem, 5vw);
+  border-radius: 1rem;
+  corner-shape: squircle;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 3rem;
 }
 
 .material-symbols-rounded {
