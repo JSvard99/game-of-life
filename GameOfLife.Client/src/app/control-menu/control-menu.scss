@@ -14,11 +14,16 @@ button {
   width: 100%;
   max-width: 3rem;
   border: none;
+  border-radius: 0.3rem;
+  corner-shape: squircle;
   cursor: pointer;
 }
 
 .shuffle-button {
   background-color: rgb(255, 255, 64);
+  &:hover {
+    background-color: rgb(255, 255, 0);
+  }
 }
 
 .clear-button {
