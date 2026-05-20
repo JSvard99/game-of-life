@@ -42,6 +42,9 @@ button {
 
 .stop-button {
   background-color: rgb(255, 64, 64);
+  &:hover {
+    background-color: rgb(255, 0, 0);
+  }
 }
 
 .next-button {
