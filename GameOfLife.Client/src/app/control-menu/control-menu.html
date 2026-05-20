@@ -17,4 +17,6 @@
   }
 </button>
 
-<button (click)="updateGrid()" [disabled]="gridService.isPlaying">Next</button>
+<button (click)="updateGrid()" [disabled]="gridService.isPlaying">
+  <span class="material-symbols-rounded">skip_next</span>
+</button>
