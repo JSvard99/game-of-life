@@ -13,6 +13,12 @@ button {
   justify-content: center;
   width: 100%;
   max-width: 3rem;
+  border: none;
+  cursor: pointer;
+}
+
+#shuffle-button {
+  background-color: rgb(255, 255, 48);
 }
 
 .material-symbols-rounded {
