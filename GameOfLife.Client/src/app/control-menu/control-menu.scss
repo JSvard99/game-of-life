@@ -35,6 +35,9 @@ button {
 
 .play-button {
   background-color: rgb(64, 255, 64);
+  &:hover {
+    background-color: rgb(0, 255, 0);
+  }
 }
 
 .stop-button {
