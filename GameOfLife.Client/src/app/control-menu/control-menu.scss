@@ -1,12 +1,15 @@
 :host {
-  width: 100%;
+  display: block;
+  width: stretch;
   background-color: darkslateblue;
-  display: flex;
-  padding: clamp(0rem, 0.75rem, 2vw);
   border-radius: 1rem;
   corner-shape: squircle;
 }
 
+.flex-container {
+  display: flex;
+  padding: clamp(0rem, 0.75rem, 2vw);
+}
 
 .left {
   display: flex;
