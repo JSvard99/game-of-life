@@ -2,7 +2,7 @@
   width: 100%;
   background-color: darkslateblue;
   display: flex;
-  padding: clamp(0rem, 0.75rem, 5vw);
+  padding: clamp(0rem, 0.75rem, 2vw);
   border-radius: 1rem;
   corner-shape: squircle;
 }
@@ -29,7 +29,7 @@ button {
   display: flex;
   justify-content: center;
   width: 100%;
-  max-width: min(12vw, 3rem);
+  max-width: min(15vw, 3rem);
   padding: 0.2rem 0;
   border: none;
   border-radius: 0.3rem;
