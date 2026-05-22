@@ -29,7 +29,7 @@ button {
   display: flex;
   justify-content: center;
   width: 100%;
-  max-width: 3rem;
+  max-width: min(12vw, 3rem);
   padding: 0.2rem 0;
   border: none;
   border-radius: 0.3rem;
