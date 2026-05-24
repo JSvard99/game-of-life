@@ -6,7 +6,7 @@
 .flex-container {
   display: flex;
   padding: clamp(0rem, 0.75rem, 2vw);
-  background-color: darkslateblue;
+  background: var(--main-color);
   border-radius: 1rem;
   corner-shape: squircle;
 }
