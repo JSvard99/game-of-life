@@ -6,9 +6,14 @@
 .flex-container {
   display: flex;
   padding: clamp(0rem, 0.75rem, 2vw);
-  background: var(--main-color);
-  border-radius: 1rem;
+
+  border: solid transparent;
+  border-radius: 0.5rem;
   corner-shape: squircle;
+  background-image:
+    linear-gradient(white), linear-gradient(45deg, firebrick, purple);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
 }
 
 .left {
