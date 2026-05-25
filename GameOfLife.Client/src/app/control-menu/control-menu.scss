@@ -11,7 +11,7 @@
   border-radius: 0.5rem;
   corner-shape: squircle;
   background-image:
-    linear-gradient(white), linear-gradient(45deg, firebrick, purple);
+    linear-gradient(var(--background-color)), linear-gradient(45deg, firebrick, purple);
   background-origin: border-box;
   background-clip: padding-box, border-box;
 }
