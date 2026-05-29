@@ -1,7 +1,14 @@
 :host {
   display: block;
   width: stretch;
-  border: solid black 0.3rem;
+
+  border: solid transparent;
+  border-radius: 0.5rem;
+  corner-shape: squircle;
+  background-image:
+    linear-gradient(black), linear-gradient(45deg, firebrick, purple);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
 }
 
 table {
