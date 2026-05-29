@@ -2,14 +2,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   min-height: 100vh;
   margin: 0 1rem;
 }
 
+h1 {
+  font-family: silkscreen, sans-serif;
+  color: lightgrey;
+  font-size: 4rem;
+}
+
 app-grid {
-  max-width: 70rem;
-  margin-bottom: 2rem;
+  max-width: 60rem;
 }
 
 app-control-menu {
