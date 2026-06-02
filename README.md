@@ -17,6 +17,6 @@ an example GET request is http://localhost:5081/grid.
 
 ## Screenshots
 
-![](Screenshots/img_1.png)
+![](Screenshots/img.png)
 
-![](Screenshots/img_2.png)
+![](Screenshots/img2.png)
