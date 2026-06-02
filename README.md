@@ -16,6 +16,7 @@ running the frontend is accessed at http://localhost:4200/. The backend server c
 an example GET request is http://localhost:5081/grid.
 
 ## Screenshots
-![img_1.png](img_1.png)
 
-![img_2.png](img_2.png)
+![](Screenshots/img_1.png)
+
+![](Screenshots/img_2.png)
