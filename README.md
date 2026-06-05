@@ -14,3 +14,9 @@ The project is structured as a fullstack app, with the logic and backend written
 written with Angular. The app is Dockerized and can be run through the compose file, in the project root folder. When 
 running the frontend is accessed at http://localhost:4200/. The backend server can be reached at http://localhost:5081, 
 an example GET request is http://localhost:5081/grid.
+
+## Screenshots
+
+![](screenshots/gol-1.png)
+
+![](screenshots/gol-2.png)
